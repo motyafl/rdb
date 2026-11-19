@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f0f2f5;
+}
+
+nav.navbar {
+    display: flex;
+    justify-content: space-between; /* Логотип слева, ссылки справа */
+    align-items: center;            /* Выравнивание по вертикали */
+
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 15px 40px;
+    background-color: #212121;
+    border-bottom: 1px solid #ddd;  /* Тонкая линия снизу */
+}
+
+nav.navbar .nav-link {
+    display: flex;
+    gap: 25px;
+}
+
+nav.navbar a {
+    text-decoration: none;
+    color: #f4f4f4;      /* Цвет фона панели */
+    font-weight: 400;
+    transition: color 0.2s ease;
+}
+
+nav.navbar a:hover {
+    color: #000;
+}
+
+nav.navbar .nav-logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 640px) {
+    nav.navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+}
