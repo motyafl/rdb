@@ -1,5 +1,7 @@
 # RDB (Roman Data Browser)
 
+[English](README.md) | [Русский](README.ru.md)
+
 RDB is a web platform for indexing, visualizing, and analyzing data from NASA's Nancy Grace Roman Space Telescope. It aggregates massive datasets from the telescope's Wide Field Instrument (WFI) into a single interactive mosaic map, allowing researchers to inspect all 18 detectors at once and drill down into individual sensor metrics right in the browser.
 
 * **Full-Mosaic Overview:** View downsampled previews from all 18 WFI detectors simultaneously, mapped strictly to their physical geometry on the focal plane.
@@ -15,6 +17,14 @@ The Nancy Grace Roman Space Telescope captures a field of view 100 times larger 
 * **Heavy Local Workflows:** Adjusting visualization arguments or plotting basic curves usually requires pulling huge raw files from S3 onto local machines.
 
 RDB solves this with a top-down workflow: a Python backend indexes and optimizes S3 arrays on the fly, while a React frontend handles interactive mosaic navigation, optical filter adjustments, contrast tuning, and live chart configuration.
+
+## Architecture
+
+The platform is built around three core layers:
+
+1. **Dashboard (Mosaic View):** Connects to S3 storage, optimizes raw sensor arrays, and renders the 18-detector focal plane layout.
+2. **Detector View:** Isolates a single sensor node upon click, loading detailed telemetry, headers, and scientific plots.
+3. **In-Browser Customization:** Lets users tweak optical filters, frequency ranges, contrast levels, and plot axes without reloading raw datasets.
 
 ## Getting Started
 
@@ -39,15 +49,6 @@ Start the development server:
 npm start
 ```
 
-## Architecture
-
-The platform is built around three core layers:
-
-1. **Dashboard (Mosaic View):** Connects to S3 storage, optimizes raw sensor arrays, and renders the 18-detector focal plane layout.
-2. **Detector View:** Isolates a single sensor node upon click, loading detailed telemetry, headers, and scientific plots.
-3. **In-Browser Customization:** Lets users tweak optical filters, frequency ranges, contrast levels, and plot axes without reloading raw datasets.
-
 ## Contributing
 
 RDB is under active development ahead of the first public Roman data releases. Bug reports, feature ideas, and pull requests are welcome.
-
