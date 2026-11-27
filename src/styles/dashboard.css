@@ -4,7 +4,7 @@
   position: relative;
   z-index: 0;
   display: grid !important;
-  grid-template-columns: 280px 1fr !important;
+  grid-template-columns: 350px 1fr !important;
   height: 100vh;
   width: 100vw;
   color: #e2e2e8;
@@ -20,7 +20,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: brightness(0.45);
+  filter: brightness(0.35);
   z-index: -1;
   pointer-events: none;
 }
@@ -40,13 +40,13 @@
 }
 
 .sidebar-middle {
-  padding: 12px;
+  padding: 30px 15px 15px 40px;
   overflow: hidden;
 }
 
 .sidebar-bottom {
   /* border-top: 1px solid #52525c !important; */
-  padding: 12px 12px 10px 12px;
+  padding: 15px 15px 30px 40px;
 }
 
 /* RIGHT AREA */
@@ -59,7 +59,7 @@
 
 .workspace-header {
   /* border-bottom: 1px solid #52525c !important; */
-  padding: 0 24px 16px 24px;
+  padding: 5px 24px 0px 24px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -68,9 +68,43 @@
 
 
 .workspace-canvas {
-  padding: 10px 12px;
+  padding: 10px 40px 30px 30px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (max-width: 900px) and (orientation: portrait) {
+  .dashboard-shell {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* Swap width and height to match the rotated screen */
+    width: 100vh !important;
+    height: 100vw !important;
+    /* Rotate 90deg and re-center */
+    transform: translate(-50%, -50%) rotate(90deg);
+    transform-origin: center center;
+  }
+}
+
+@media screen and (max-height: 500px) and (orientation: landscape),
+       screen and (max-width: 900px) and (orientation: portrait) {
+  .dashboard-shell {
+    /* Narrow the sidebar slightly on small screens */
+    grid-template-columns: 240px 1fr !important;
+  }
+
+  .sidebar {
+    grid-template-rows: 1fr 150px !important;
+  }
+
+  .workspace {
+    grid-template-rows: 90px 1fr !important;
+  }
+
+  .workspace-canvas {
+      padding: 10px 30px 30px 20px !important;
+  }
 }

@@ -24,7 +24,7 @@ const NEBULA_URL = "https://assets.science.nasa.gov/dynamicimage/assets/science/
         <main className="workspace">
             <header className="workspace-header">{ <ASCiiDash/> }</header>
             <section className="workspace-canvas">{
-                <BlackGlassBox>
+                <BlackGlassBox angle="35deg">
                 <p style={{ margin: 0, fontSize: 18 }}>
                     Your text will now render clearly inside the tall lens.
                 </p>
