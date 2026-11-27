@@ -1,0 +1,76 @@
+.dashboard-shell {
+  --px: 0px;
+  --py: 0px;
+  position: relative;
+  z-index: 0;
+  display: grid !important;
+  grid-template-columns: 280px 1fr !important;
+  height: 100vh;
+  width: 100vw;
+  color: #e2e2e8;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.dashboard-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/releases/2005/11/STScI-01EVT7ZRXG0NYME3W84ECPR6ND.tif?w=1568&h=3888&fit=clip");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.45);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* LEFT AREA */
+.sidebar {
+  display: grid !important;
+  grid-template-rows: 1fr 180px !important; /* 150px 1fr 150px */
+  /* border-right: 1px solid #52525c !important; */
+  height: 100%;
+  overflow: hidden;
+}
+
+.sidebar-top {
+  /* border-bottom: 1px solid #52525c !important; */
+  padding: 12px;
+}
+
+.sidebar-middle {
+  padding: 12px;
+  overflow: hidden;
+}
+
+.sidebar-bottom {
+  /* border-top: 1px solid #52525c !important; */
+  padding: 12px 12px 10px 12px;
+}
+
+/* RIGHT AREA */
+.workspace {
+  display: grid !important;
+  grid-template-rows: 180px 1fr !important;
+  height: 100%;
+  overflow: hidden;
+}
+
+.workspace-header {
+  /* border-bottom: 1px solid #52525c !important; */
+  padding: 0 24px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+
+.workspace-canvas {
+  padding: 10px 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -4,20 +4,22 @@ import { Route, Routes } from "react-router";
 import Layout from '../Layout.tsx';
 import "../styles/preface.min.css";
 
+import HomePage from "../pages/HomePage"
+import AboutPage from "../pages/AboutPage"
+import DashLayout from "../pages/DashLayout"
+
 function App() {
     return (
       <Routes>
       <Route element={<Layout/>}>
-            <Route index element={
-                <>
-                <h2>HOME</h2>
-                </>
-            } />
-            <Route path='/about' element={<h2>ABOUT</h2>} />
+            <Route index element={ <HomePage/> } />
+            <Route path='/about' element={ <AboutPage/> } />
             <Route path='*' element={<h2>404</h2>} />
       </Route>
 
-      <Route path='/dash' element={<h2>DASHBOARD</h2>} />
+      <Route path='/dash' element={ <DashLayout/> } >
+            <Route index element={ <HomePage/> } />
+      </Route>
       </Routes>
     )
 };
